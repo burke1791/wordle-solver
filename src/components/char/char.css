@@ -1,0 +1,26 @@
+.char-container {
+  border: 1px solid #131312;
+  height: 65;
+  width: 65;
+  margin: 4 5;
+  font-size: 50;
+  font-weight: bold;
+  font-family: monospace;
+  background-color: #131212;
+}
+
+.char-letter {
+  color: #fefeff;
+}
+
+.char-incorrect {
+  background-color: #3a3a3c !important;
+}
+
+.char-present {
+  background-color: #b69f3b !important;
+}
+
+.char-correct {
+  background-color: #528c4f !important;
+}
