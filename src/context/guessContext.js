@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer } from 'react';
-import { getLocalStorage } from '../utilities';
+import { getLocalStorage } from '../utilities/localStorage';
 import ContextSkeleton from './template';
 
 const guessContext = new ContextSkeleton({ name: 'guessContext', storageEnabled: true });

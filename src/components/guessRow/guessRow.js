@@ -17,6 +17,8 @@ function GuessRow(props) {
   const { guesses } =  useGuessState();
 
   const getCharProp = (charIdx, prop) => {
+    if (!guesses?.length) return null;
+
     const guess = guesses.find(g => g.guessNum == props.guessNum);
     if (guess == undefined) return null;
 
@@ -27,7 +29,7 @@ function GuessRow(props) {
   }
 
   return (
-    <Row justify='space-between'>
+    <Row justify='space-around'>
       <Col>
         <Char
           isInWord={getCharProp(1, 'isInWord')}

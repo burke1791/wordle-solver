@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Children } from 'react';
 import './char.css';
 
 /**
  * @typedef CharProps
  * @property {Boolean} isInWord
  * @property {Boolean} isCorrectPosition
+ * @property {Children} children
  */
 
 /**
@@ -25,7 +26,7 @@ function Char(props) {
         setCharClass('char-container char-letter char-incorrect');
       }
     }
-  }, [...props])
+  }, [props.isInWord, props.isCorrectPosition])
 
   return (
     <div className={charClass}>

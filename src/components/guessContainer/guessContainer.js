@@ -4,20 +4,30 @@ import GuessRow from '../guessRow/guessRow';
 
 function GuessContainer() {
 
-  const { activeRow } = useGuessState();
+  const { activeRow, activeCol } = useGuessState();
 
   useEffect(() => {
-    document.addEventListener('keydown', handleKeypress);
+    document.addEventListener('keyup', handleKeypress);
 
     return (() => {
-      document.removeEventListener('keydown');
+      document.removeEventListener('keyup');
     });
   }, []);
 
-  const handleKeypress = (e) => {
-    if (e.which >= 65 && e.which <= 90) {
-      e.preventDefault();
+  const setGuess = (letter) => {
+    
+  }
 
+  const handleKeypress = (e) => {
+    console.log(e);
+    if (e.which >= 65 && e.which <= 90) {
+      // upper-case letters
+      e.preventDefault();
+      setGuess()
+    } else if (e.which >= 97 && e.which <= 122) {
+      // lower-case letters
+      e.preventDefault();
+      setGuess()
     }
   }
 
